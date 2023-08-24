@@ -24,7 +24,7 @@ class MethodChannelObjectDetector extends ObjectDetectorPlatform {
     final result = await methodChannel.invokeMethod('run_on_image', [
       modelPath,
       imagePath,
-      threshold,
+      threshold.toString(),
     ]);
     return result;
   }

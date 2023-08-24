@@ -15,20 +15,14 @@ public class SwiftObjectDetectorPlugin: NSObject, FlutterPlugin {
   }
 
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
-      let args = call.arguments as? [String]
-      guard let assetPath = args?[0] else{
-          print("Model path is empty")
+      guard let args = call.arguments as? [String] else{
+          print("args is empty")
           return
       }
-      guard let imagePathArg = args?[1] else{
-          print("imagePath is empty")
-          return
-      }
-      
-      guard let threshold = args?[2] else{
-          print("threshold is empty")
-          return
-      }
+       let assetPath = args[0]
+       let imagePathArg = args[1]
+    
+     let threshold = args[2]
       
       let modelKey = SwiftObjectDetectorPlugin.registrar?.lookupKey(forAsset: assetPath)
       let imageKey = SwiftObjectDetectorPlugin.registrar?.lookupKey(forAsset: imagePathArg)
