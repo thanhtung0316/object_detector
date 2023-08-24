@@ -1,0 +1,39 @@
+PODS:
+  - Flutter (1.0.0)
+  - image_picker_ios (0.0.1):
+    - Flutter
+  - MediaPipeTasksCommon (0.10.3)
+  - MediaPipeTasksVision (0.10.3):
+    - MediaPipeTasksCommon (= 0.10.3)
+  - object_detector (0.0.1):
+    - Flutter
+    - MediaPipeTasksVision
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - image_picker_ios (from `.symlinks/plugins/image_picker_ios/ios`)
+  - object_detector (from `.symlinks/plugins/object_detector/ios`)
+
+SPEC REPOS:
+  trunk:
+    - MediaPipeTasksCommon
+    - MediaPipeTasksVision
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  image_picker_ios:
+    :path: ".symlinks/plugins/image_picker_ios/ios"
+  object_detector:
+    :path: ".symlinks/plugins/object_detector/ios"
+
+SPEC CHECKSUMS:
+  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  image_picker_ios: 4a8aadfbb6dc30ad5141a2ce3832af9214a705b5
+  MediaPipeTasksCommon: 8377139fdc9b3e88898789197f2dba15457c2879
+  MediaPipeTasksVision: c0e0e8ea10966486cb4ce0d67e159165fb9d48e6
+  object_detector: fcb9da988c4880ddf95dedfa269094373adc7fe8
+
+PODFILE CHECKSUM: 356367b4fa3e443cfad8f3443dc9caeac4fc6a72
+
+COCOAPODS: 1.12.1
