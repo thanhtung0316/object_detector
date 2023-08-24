@@ -45,7 +45,6 @@ public class SwiftObjectDetectorPlugin: NSObject, FlutterPlugin {
       let options = ObjectDetectorOptions()
       options.baseOptions.modelAssetPath = modelPath
       options.runningMode = .image
-      options.scoreThreshold = 0.5
       do {
           let objectDetector = try ObjectDetector(options: options)
         let results = try objectDetector.detect(image: image)
