@@ -5,9 +5,15 @@ class ObjectDetector {
     return ObjectDetectorPlatform.instance.getPlatformVersion();
   }
 
-  Future<dynamic> runDetectorOnImage(
-      {required String modelPath, required String imagePath}) {
-    return ObjectDetectorPlatform.instance
-        .runDetectorOnImage(modelPath: modelPath, imagePath: imagePath);
+  Future<dynamic> runDetectorOnImage({
+    required String modelPath,
+    required String imagePath,
+    double threshold = .5,
+  }) {
+    return ObjectDetectorPlatform.instance.runDetectorOnImage(
+      modelPath: modelPath,
+      imagePath: imagePath,
+      threshold: threshold,
+    );
   }
 }

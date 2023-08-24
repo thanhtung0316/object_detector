@@ -27,8 +27,11 @@ abstract class ObjectDetectorPlatform extends PlatformInterface {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
 
-  Future<dynamic> runDetectorOnImage({required String modelPath,required String imagePath}) {
+  Future<dynamic> runDetectorOnImage({
+    required String modelPath,
+    required String imagePath,
+    double? threshold,
+  }) {
     throw UnimplementedError('runDetectorOnImage() has not been implemented.');
   }
-
 }

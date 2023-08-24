@@ -18,9 +18,14 @@ class MethodChannelObjectDetector extends ObjectDetectorPlatform {
 
   @override
   Future<dynamic> runDetectorOnImage(
-      {required String modelPath, required String imagePath}) async {
-    final result = await methodChannel
-        .invokeMethod('run_on_image', [modelPath, imagePath]);
+      {required String modelPath,
+      required String imagePath,
+      double? threshold}) async {
+    final result = await methodChannel.invokeMethod('run_on_image', [
+      modelPath,
+      imagePath,
+      threshold,
+    ]);
     return result;
   }
 }

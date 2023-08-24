@@ -16,12 +16,17 @@ public class SwiftObjectDetectorPlugin: NSObject, FlutterPlugin {
 
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
       let args = call.arguments as? [String]
-      guard let assetPath = args?.first else{
+      guard let assetPath = args?[0] else{
           print("Model path is empty")
           return
       }
-      guard let imagePathArg = args?.last else{
+      guard let imagePathArg = args?[1] else{
           print("imagePath is empty")
+          return
+      }
+      
+      guard let threshold = args?[2] else{
+          print("threshold is empty")
           return
       }
       
@@ -45,6 +50,7 @@ public class SwiftObjectDetectorPlugin: NSObject, FlutterPlugin {
       let options = ObjectDetectorOptions()
       options.baseOptions.modelAssetPath = modelPath
       options.runningMode = .image
+      options.scoreThreshold = (threshold as NSString).floatValue
       do {
           let objectDetector = try ObjectDetector(options: options)
         let results = try objectDetector.detect(image: image)
